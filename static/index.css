@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+}
+
+.index-page {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 1fr 3fr;
+    justify-items: center;
+}
+
+.upper {
+    grid-row: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 2px solid #D0BB98;
+}
+
+.header-logo {
+    align-self: center;
+    width: 12em;
+    height: 4em;
+}
+
+.div-header-span-1-text {
+    align-self: center;
+    padding-left: 25px;
+    font-family: fantasy;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+.div-message {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    padding-top: 1em;
+    border-top: 2px solid #3E3960;
+}
+
+.message-list {
+    text-align: center;
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.feature-list {
+    text-align: start;
+    font-size: 3rem;
+    font-family: monospace;
+}
