@@ -108,8 +108,3 @@ body {
 li {
     margin-bottom: .8em;
 }
-
-.no-decorate {
-    color: inherit!important;
-    text-decoration: none!important;
-}
