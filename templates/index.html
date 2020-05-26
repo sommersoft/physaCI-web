@@ -1,0 +1,49 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/index.css">
+        <link rel="stylesheet" href="../static/color_pallet.css">
+        <script src="https://kit.fontawesome.com/e010cbf33d.js" crossorigin="anonymous"></script>
+        <title>physaCI </title>
+    </head>
+    <body class="bg-color-secondary-1-1">
+        <div class="index-page">
+            <div class="upper bg-color-secondary-1-3">
+                <img class="header-logo" src="../static/images/physa_silhouette_two_color.png" alt="physaCI Logo - Two Color">
+                <span class="div-header-span-1-text">
+                    <span class="color-complement-2">physa</span><span class="color-primary-1">CI</span>
+                </span>
+            </div>
+            <div class="div-message bg-color-secondary-1-1">
+                <div class="div-content">
+                    <div class="div-about-physaci">
+                        <article class="about-physaci">
+                            physaCI is a Continuous Integration (CI) platform designed to enable
+                            automated, physical testing of <a href="https://circuitpython.org" target="_blank">CircuitPython</a> firmware updates.
+                            The key components are a REST API framework, physical testing nodes hosted on Raspberry Pi single-board computers, and
+                            integration with GitHub.
+                        </article>
+                    </div>
+                    <div class="feature-list">
+                        Features Include:
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-angle-right fa-sm"></i></span>GitHub integration via a GitHub App</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right fa-sm"></i></span>Standardized, self-updating Raspberry Pi Ansible configuration</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right fa-sm"></i></span>Microsoft Azure hosted backend</li>
+                            <li><span class="fa-li"><i class="fas fa-angle-right fa-sm"></i></span>100% Open Source & MIT Licensed</li>
+                        </ul>
+                    </div>
+                    <div class="div-about-snail">
+                        <article class="about-snail">
+                            What's up with the snail? Well, while brainstorming ideas for the backend of the service,
+                            "physical CI" came to mind. Then, it was widdled down to "physaCI" [fizza-see-eye]. You know, cool internet
+                            word play. Then the time came for a logo. Coincidentally, <i>Physa</i> is the genus of a group of small...SNAILS!
+                            Couldn't have planned that...
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%- include 'footer.html' without context -%}
+    </body>
+</html>

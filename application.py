@@ -34,6 +34,8 @@ app = Flask(__name__)
 with app.test_request_context():
     url_for('static', filename='physaci.css')
     url_for('static', filename='job_results.css')
+    url_for('static', filename='oops.css')
+    url_for('static', filename='index.css')
     url_for('static', filename='color_pallet.css')
     url_for('static', filename='images/physa_silhouette_two_color.png')
     url_for('static', filename='scripts/result_viewer.js')
@@ -49,7 +51,7 @@ def handle_oopsie(e):
 
 @app.route('/')
 def index():
-    return 'physaCI'
+    return render_template('index.html')
 
 @app.route('/job')
 def job_result():
@@ -74,7 +76,3 @@ def job_result():
             abort(job_data.status_code, description=description)
         else:
             abort(500)
-
-
-
-    
