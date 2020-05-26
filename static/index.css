@@ -44,14 +44,45 @@ body {
     border-top: 2px solid #3E3960;
 }
 
-.message-list {
-    text-align: center;
-    font-size: 4rem;
+.div-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-row-gap: 20px;
+    grid-template-areas:
+        " about about about "
+        " . features . "
+        " snail snail snail"
+}
+
+.div-about-physaci {
+    grid-area: about;
+    display: flex;
+    justify-content: center;
+}
+
+.about-physaci {
+    width: 90%;
+    text-align: justify;
+    font-size: 3rem;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .feature-list {
+    grid-area: features;
     text-align: start;
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-family: monospace;
+}
+
+.div-about-snail {
+    grid-area: snail;
+    display: flex;
+    justify-content: center;
+}
+
+.about-snail {
+    width: 90%;
+    text-align: justify;
+    font-size: 2.7rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
