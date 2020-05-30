@@ -9,10 +9,7 @@
     <body class="bg-color-secondary-1-1">
         <div class="index-page">
             <div class="upper bg-color-secondary-1-3">
-                <img class="header-logo" src="../static/images/physa_silhouette_two_color.png" alt="physaCI Logo - Two Color">
-                <span class="div-header-span-1-text">
-                    <span class="color-complement-2">physa</span><span class="color-primary-1">CI</span>
-                </span>
+                {% include 'header.html' -%}
             </div>
             <div class="div-message bg-color-secondary-1-1">
                 <div class="div-content">
@@ -32,6 +29,12 @@
                             <li><span class="fa-li"><i class="fas fa-angle-right fa-sm"></i></span>Microsoft Azure hosted backend</li>
                             <li><span class="fa-li"><i class="fas fa-angle-right fa-sm"></i></span>100% Open Source & MIT Licensed</li>
                         </ul>
+                    </div>
+                    <div class="div-event-seq">
+                        <article class="about-physaci">
+                            Here is how the system flows:
+                        </article>
+                        <img src="../static/images/physaci_rosiepi_event_sequence.png" alt="physaCI & RosiePi Event Sequence">
                     </div>
                     <div class="div-about-snail">
                         <article class="about-snail">

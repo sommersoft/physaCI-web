@@ -51,6 +51,7 @@ body {
     grid-template-areas:
         " about about about "
         " . features . "
+        " event_seq event_seq ."
         " snail snail snail"
 }
 
@@ -72,6 +73,13 @@ body {
     text-align: start;
     font-size: 2.7rem;
     font-family: monospace;
+}
+
+.div-event-seq {
+    grid-area: event_seq;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .div-about-snail {
