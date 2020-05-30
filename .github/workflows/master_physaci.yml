@@ -4,6 +4,8 @@
 name: Build and deploy Python app to Azure Web App - physaci
 
 on:
+  release:
+    types: [published]
   push:
     branches:
       - master
@@ -31,3 +33,4 @@ jobs:
         app-name: 'physaci'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_4e92bde43d604530a3bf366d0fc7e028 }}
+      if: ${{ github.event == release }}
