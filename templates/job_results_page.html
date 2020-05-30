@@ -2,7 +2,7 @@
 <div class="board-results-wrapper">
     {%- for result in node_results -%}
     <div id="{{ 'board-result-' ~ loop.index }}" class="board-result">
-        <div class="board-results-summary board-result-child bg-color-complement-2">
+        <div class="board-results-summary board-result-child bg-color-secondary-1-3">
             <div class="board-result-child">
                 <p class="board-result-grandchild"><b>Tests Passed:</b> {{ result['tests_passed'] }}</p>
                 <p class="board-result-grandchild"><b>Tests Failed:</b> {{ result['tests_failed'] }}</p>
