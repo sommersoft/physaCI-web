@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+
     - uses: actions/checkout@master
 
     - name: Set up Python version
@@ -33,4 +38,4 @@ jobs:
         app-name: 'physaci'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_4e92bde43d604530a3bf366d0fc7e028 }}
-      if: ${{ github.event == release }}
+      if: ${{ github.event == 'release' }}
