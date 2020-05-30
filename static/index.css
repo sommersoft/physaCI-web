@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+
+.index-page {
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-template-rows: 1fr 6fr;
+    justify-items: center;
+}
+
+.upper {
+    grid-row: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 2px solid #D0BB98;
+}
+
+.header-logo {
+    align-self: center;
+    width: 12em;
+    height: 4em;
+}
+
+.div-header-span-1-text {
+    align-self: center;
+    padding-left: 25px;
+    font-family: fantasy;
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+.div-message {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    padding-top: 1em;
+    border-top: 2px solid #3E3960;
+}
+
+.div-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-row-gap: 2rem;
+    grid-template-areas:
+        " about-physaci  about-physaci  about-physaci "
+        " about-rosiepi  about-rosiepi  about-rosiepi "
+        " event_seq      event_seq      event_seq"
+        " snail          snail          snail"
+}
+
+.div-about-physaci {
+    grid-area: about-physaci;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #D0BB98;
+    padding-bottom: 1rem;
+}
+
+.div-about-rosiepi {
+    grid-area: about-rosiepi;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #D0BB98;
+    padding-bottom: 1rem;
+}
+
+article {
+    width: 90%;
+    text-align: justify;
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.div-event-seq {
+    grid-area: event_seq;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #D0BB98;
+    padding-bottom: 1rem;
+}
+
+.event-seq {
+    align-self: center;
+}
+
+.div-about-snail {
+    grid-area: snail;
+    display: flex;
+    justify-content: center;
+}
+
+.about-snail {
+    width: 90%;
+    text-align: justify;
+    font-size: 2.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+}

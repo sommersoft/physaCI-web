@@ -1,0 +1,50 @@
+{%- import 'jinja_helpers.html' as helpers with context -%}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/physaci.css">
+        <link rel="stylesheet" href="../static/job_results.css">
+        <link rel="stylesheet" href="../static/color_pallet.css">
+        <script src="../static/scripts/result_viewer.js"></script>
+        <script src="https://kit.fontawesome.com/e010cbf33d.js" crossorigin="anonymous"></script>
+        <title>physaCI - RosiePi Job Results </title>
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <div class="div-header bg-color-secondary-1-3">
+                <div class="div-header-span-1">
+                    {% include 'header.html' -%}
+                </div>
+            </div>
+            <div class="vert-divider"></div>
+            <div class="main-body-left">
+                <div class="job-summary-flex">
+                    <div class="job-summary-header1-soft">
+                        Job Summary
+                    </div>
+                    <div class="job-summary-items">
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-calendar-alt"></i></span><b>Job Date:</b> {{ check_run_date -}}</li>
+                            <li><span class="fa-li"><i class="fab fa-github"></i></span><b>Commit SHA:</b> {{ commit_sha|truncate(5, end='') -}}</li>
+                            <li><span class="fa-li">{{- helpers.summary_outcome_icon(outcome) -}}</span><b>Outcome:</b> {{ outcome|title -}}</li>
+                            <li><span class="fa-li"><i class="fab fa-raspberry-pi"></i></span><b>Ran on node:</b> {{ node_name -}}</li>
+                        </ul>
+                    </div>
+                    <div class="results-board-list">
+                        <p class="job-summary-boards-header1-soft">Results By Boards Tested:</p>
+                        <ul class="fa-ul">
+                        {%- for result in node_results %}
+                            {%- set link_id = "board-result-" ~ loop.index -%}
+                            <li class="results-board-list-item"><div><span class="fa-li">{{- helpers.board_outcome_icon(result['outcome']) -}}<button type="button" class="board-result-button" id="{{ link_id }}" onclick="showLog('{{ link_id }}')">{{ result['board_name'] }}</button></span></div></li>
+                        {%- endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-body-center">
+                {% include 'job_results_page.html' with context -%}
+            </div>
+        </div>
+    </body>
+</html>

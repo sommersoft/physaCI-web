@@ -1,0 +1,60 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/index.css">
+        <link rel="stylesheet" href="../static/color_pallet.css">
+        <script src="https://kit.fontawesome.com/e010cbf33d.js" crossorigin="anonymous"></script>
+        <title>physaCI </title>
+    </head>
+    <body class="bg-color-secondary-1-1">
+        <div class="index-page">
+            <div class="upper bg-color-secondary-1-3">
+                {% include 'header.html' -%}
+            </div>
+            <div class="div-message bg-color-secondary-1-1">
+                <div class="div-content">
+                    <div class="div-about-physaci">
+                        <article class="about-physaci">
+                            <i class="fas fa-angle-right fa-lg"></i>
+                            <b>physaCI</b>, combined with <i>RosiePi</i>, is a Continuous Integration (CI) platform designed to enable automated,
+                            physical testing of <a href="https://circuitpython.org" target="_blank">CircuitPython</a> firmware changes.
+                            The goal, as with all CI, is to help find code changes that break functionality before they reach the user.
+                            <i>physaCI</i> is the integration layer that links GitHub events with RosiPi test nodes. <i>physaCI</i> runs on 
+                            Microsoft Azure, as an Azure Functions serverless application.
+                        </article>
+                    </div>
+                    <div class="div-about-rosiepi">
+                        <article class="about-rosiepi">
+                            <i class="fas fa-angle-right fa-lg"></i>
+                            <b>RosiePi</b>, is the workhorse of this combination. It is a collection of programs and services configured
+                            to integrate <i>physaCI</i> events with running the actual physical tests. <i>RosiePi</i> test nodes are run on
+                            <a href="https://www.raspberrypi.org/" target="_blank">Raspberry Pi</a> single-board computers. Nodes register
+                            themselves with <i>physaCI</i> on a scheduled basis, allowing <i>physaCI</i> to send push notification-style messages and
+                            queue jobs in a balanced manner. Once a node has queued a test job, it will compile the firmware for each connected
+                            CircuitPython board, using the code in the affected GitHub pull request. The test node will then run tests,
+                            which live in the CircuitPython repository, on the connected board(s). These tests are also pulled from the
+                            affected pull request, allowing tests to be updated with code changes. After tests are completed, the test node
+                            sends the results to <i>physaCI</i>.
+                        </article>
+                    </div>
+                    <div class="div-event-seq">
+                        <article class="event-seq">
+                            <i class="fas fa-angle-right fa-lg"></i>
+                            Here is an example of the workflow of a single instance:
+                        </article>
+                        <img src="../static/images/physaci_rosiepi_event_sequence.png" alt="physaCI & RosiePi Event Sequence">
+                    </div>
+                    <div class="div-about-snail">
+                        <article class="about-snail">
+                            What's up with the snail? Well, while brainstorming ideas for the backend of the service,
+                            "physical CI" came to mind. Then, it was whittled down to "physaCI" [fizza-see-eye]. You know, cool internet
+                            word play. Then the time came for a logo. Coincidentally, <i>Physa</i> is the genus of a group of small...SNAILS!
+                            Couldn't have planned that...
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%- include 'footer.html' without context -%}
+    </body>
+</html>

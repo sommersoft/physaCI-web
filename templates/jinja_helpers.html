@@ -1,0 +1,35 @@
+{# Macro to select the proper icon & color for the overall
+   outcome of the job.
+#}
+{%- macro summary_outcome_icon(outcome) -%}
+{%- if outcome|lower  == 'failure' -%}
+    <i class="fas fa-times-circle" style="color: tomato;"></i>
+{%- elif outcome|lower  == 'cancelled' -%}
+    <i class="fas fa-minus-circle" style="color: tomato;"></i>
+{%- elif outcome|lower  == 'timed_out' -%}
+    <i class="fas fa-tired" style="color: tomato;"></i>
+{%- elif outcome|lower == 'success' -%}
+    <i class="fas fa-check-circle" style="color: darkgreen;"></i>
+{%- else -%}
+    <i class="fas fa-circle" style="color:gray;"></i>
+
+{%- endif -%}
+{%- endmacro -%}
+
+{# Macro to select the proper icon & color for the outcome
+   of a board's test.
+ #}
+{%- macro board_outcome_icon(outcome) -%}
+{%- if outcome in ['Error', 'Failed'] -%}
+    <i class="fas fa-times" style="color: tomato;"></i>
+{%- else -%}
+    <i class="fas fa-check" style="color: darkgreen;"></i>
+{%- endif -%}
+{%- endmacro -%}
+
+{# Macro to randomly select an icon for the oopsie page.
+#}
+{%- macro oopsie_icon() -%}
+    {%- set icon_list = ['fa-grimace', 'fa-dumpster-fire', 'fa-ghost', 'fa-sad-cry', 'fa-user-astronaut'] -%}
+    {{ icon_list|random }}
+{%- endmacro -%}
